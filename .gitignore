@@ -1,17 +1,41 @@
+.ensime
+.ensime_cache
 *.class
 *.log
+*.DS_Store
+*.zip
+*.history
+*.iml
+*.out
+RUNNING_PID
+.RUNNING_PID*
+*-gc.log*
 
 # sbt specific
-.cache
-.history
-.lib/
 dist/*
 target/
 lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
+tmp/
+out/
+logs/
 
-# Scala-IDE specific
+#Scala-IDE specific
 .scala_dependencies
-.worksheet
+
+#Eclipse
+.cache
+.project
+.classpath
+.settings/
+.worksheet/
+
+#IntelliJ
+.idea/
+.idea_modules/
+
+#Vagrant
+.vagrant/
+data/
