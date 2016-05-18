@@ -1,4 +1,4 @@
-package com.badgeville.scala_prometheus_basic
+package com.badgeville.finagle.filters
 
 import com.twitter.finagle.{Filter, IndividualRequestTimeoutException, RequestTimeoutException, Service}
 import com.twitter.util.{Duration, Future, Timer}
@@ -8,11 +8,11 @@ import com.twitter.util.{Duration, Future, Timer}
   */
 
 class FinagleFilter[Request, Response](
-                               timeout: Duration,
-                               exception: RequestTimeoutException,
-                               timer: Timer)
-  extends Filter[Request, Response, Request, Response]
-{
+  timeout:   Duration,
+  exception: RequestTimeoutException,
+  timer:     Timer
+)
+    extends Filter[Request, Response, Request, Response] {
   def this(timeout: Duration, timer: Timer) =
     this(timeout, new IndividualRequestTimeoutException(timeout), timer)
 
